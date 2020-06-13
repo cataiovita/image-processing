@@ -1,0 +1,46 @@
+~~~~~~~~~~~~~TASK 1~~~~~~~~~~~~~~~
+	In privinta rezolvarii primului task, am abordat o serie de exercitii mentale
+ce au rezultat la o rezolvare decenta, nu tocmai optima. Functia de generare
+a sistemului de probabilitate am rezolvat-o printr-o analiza excesiva asupra
+desenului propus, ce s-a datorat a fi folositor. Am analizat posibilita-
+tile fiecarui nod din interiorul triunghiului, am realizat si luat in vedere
+existenta celor trei tipuri clasificate de noduri: pe latura, pe colt sau 
+in interior. Am creat legaturile specifice, necesare sistemului prin introducerea
+pe pozitii aferente a fiecarui intreg. Vectorul sistemului l-am rezultat, de 
+asemenea utilizand o relatie ce determina ultimele elemente din sistem, cazul
+in care rozatoarea ajunge la mancare.
+	Pentru urmatoare functie, am parcurs iterativ matricea si m-am folosit de
+instructiunile oferite in cadrul cerintei pentru a genera multitudinea de 
+vectori, generand cei trei vectori in forma CSR. Pentru ultima functie, Jacobi
+sparse, m-am folosit de cele invatate in laborator.
+
+~~~~~~~~~~~~~TASK 2~~~~~~~~~~~~~~~~
+	Inainte de a porni spre explicatia acestui exercitiu, vreau sa mentionez
+atractia pe care am avut-o asupra acestuia. Am urmarit o multitudine de subiecte
+pe aceasta tema a clusteringului si imi pare extrem de folositoare si in acelasi
+timp la baza, destul de simpla, dar cu mare impact. Initial, m-am folosit de
+metoda de generare a clusterelor initiale, afland apoi centroidul fiecaruia.
+Am gandit acel fisier de input de puncte ca un vector pe care l-am parcurs cu un
+pas de NC, numar de clustere, si am aflat media fiecarei coordonate a centroidului,
+generand vectorul de NC centroizi. Am calculat apoi distanta dintre fiecare centroid
+spre fiecare punct al listei de puncte, creand in acelasi timp un vector de indexi
+necesar pentru a tine minte pozitiile fiecarui punct care este apropiat centroidului
+specific. In final am efectuat parcurgerea acestui vector de indexi concomitenta
+cu parcurgerea listei de puncte pentru o recentrare a centroizilor. Am repetat
+acesti pasi pana cand centroizii pareau a fi bine pozitionati in spatiu.
+Costul de clustering l-am aflat prin aplicarea aceleasi formule de aflare a 
+distantei dintre un punct si un centroid, parcurgand toata lista de puncte si 
+tinand cont de existenta unui punct mai apropiat decat cel anterior pentru fiecare
+centroid.
+
+~~~~~~~~~~~TASK 3~~~~~~~~~~~~~~~~~
+	La task-ul trei am initializat vectorul histograma cu dimensiunea necesara,
+apoi am introdus matricea imaginii pe care am parcurs-o pe rand pentru fiecare
+matrice specifica culorii, r-g-b. M-am folosit apoi de functia histc pentru 
+determinarea numarului de elemente din fiecare matrice initiata, dupa care le-am
+adunat, generand astfel de fiecare data un element din vectorul final sol.
+Functia de hsv am generat-o similar, dar am creat intai functia myrgb2hsv pentru
+a transforma imaginea din format rgb in hsv. Am generat matricile pentru fiecare
+dintre cei trei parametri si am urmat algoritmul afisat. Am creat si o functie
+Hhelper pentru determinarea fiecarui pixel pentru Hue, nereusind sa vectorizez
+bucata aceasta de cod.
